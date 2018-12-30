@@ -61,11 +61,14 @@ def certificado():
     _placeholder='Entre com o número do certificado', _name='numero'))
     return dict(form=form)
 
-def certificado_ver():
-    certificado_detalhe = db(Certificado.id == request.args(0)).select()
-    return dict(certificado_detalhe=certificado_detalhe)
-
 def certificado_detalhe():
+    certificado_detalhe = db(Certificado.id == request.vars.numero).select()
+    if certificado_detalhe.records == []:
+        redirect(URL('index'))
+    else:
+        return dict(certificado_detalhe=certificado_detalhe)
+
+def certificado_ver():
     grid = SQLFORM.grid(Certificado)
     return dict(grid=grid)
 
