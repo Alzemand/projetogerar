@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projeto Gerar</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet"> -->
+
+  <!-- Bootstrap CSS File -->
+  <link href="{{=URL('static','pg/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+  <!-- Libraries CSS Files -->
+  <link href="{{=URL('static','pg/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{=URL('static','pg/lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{=URL('static','pg/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{=URL('static','pg/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{=URL('static','pg/lib/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
+  <link href="{{=URL('static','pg/lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{{=URL('static','pg/css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Reveal
+    Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body id="body">
+
+  <!--==========================
+    Top Bar
+  ============================-->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="fa fa-phone"></i> 22 99999 9999
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <!-- <div id="logo" class="pull-left"> -->
+        <!-- <h1><a href="#body" class="scrollto">Reve<span>al</span></a></h1> -->
+        <a href="#body"><img src="{{=URL('static', 'img/logo.jpg')}}" width="15%" height="15%" alt="" title="" /></a>
+      <!-- </div> -->
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#body">Início</a></li>
+          <li><a href="#about">Sobre Nós</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#team">Equipe</a></li>
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="#team"><span>Validar Certificado</span></a></li>
+          <!-- <li class="menu-has-children"><a href="#">Certificado</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li> -->
+
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <br><br><br>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <br><br><br><br>
+            <form action="{{=URL('certificado_ver')}}">
+              <div class="form-row">
+                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                  {{=form}}
+                </div>
+                <div class="col-12 col-md-3">
+                  <button type="submit" class="btn btn-block btn-lg btn-primary">Verificar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+<br><br><br><br>
+
+
+    <div id="valido" class="container" style="display: none">
+        <div class="alert alert-success alert-certificado centro">
+        <h4>Certificado Válido!</h4>
+        <br class="clear">
+        Atestamos que o certificado número: <b class="res-codigo">teste</b> é inválido.
+        </div>
+    </div>
+
+
+    <div id ="invalido" class="container" style="display: none">
+        <div class="alert alert-danger alert-certificado centro">
+        <h4>Certificado Inválido!</h4>
+        <br class="clear">
+        Atestamos que o certificado número: <b class="res-codigo">teste</b> é inválido.
+        </div>
+    </div>
+
+
+
+  <!-- JavaScript Libraries -->
+  <script src="{{=URL('static','pg/lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/jquery/jquery-migrate.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/easing/easing.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/superfish/hoverIntent.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/wow/wow.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/magnific-popup/magnific-popup.min.js')}}"></script>
+  <script src="{{=URL('static','pg/lib/sticky/sticky.js')}}"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

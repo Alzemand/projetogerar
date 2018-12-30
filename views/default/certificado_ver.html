@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+
+{{# -*- coding: utf-8 -*-}}
+
+
+{{for certificado in certificado_detalhe:}}
+    {{certificado}}
+{{pass}}
+
+
+<h1>Hello {{=request.vars.numero}}</h1>
+
+{{=certificado}}

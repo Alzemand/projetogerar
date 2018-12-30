@@ -1,0 +1,8 @@
+*.*~
+*~
+errors/
+sessions/
+databases/
+cache/
+uploads/
+progess.log
