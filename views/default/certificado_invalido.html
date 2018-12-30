@@ -1,0 +1,37 @@
+{{extend 'layout-pg.html'}}
+
+{{include 'navc.html'}}
+
+<!-- Masthead -->
+<header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <br><br><br>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <br><br><br><br>
+                <form action="{{=URL('certificado_valido')}}">
+                    <div class="form-row">
+                        <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            {{=form}}
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">Verificar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<br><br><br><br>
+
+<div id="invalido" class="container">
+    <div class="alert alert-danger alert-certificado centro">
+        <h4>Certificado Inválido!</h4>
+        <br class="clear">
+        Atestamos que o certificado informado  <b class="res-codigo">é inválido</b>. Por favor, entre em contato para esclarecermos quaisquer dúvidas.
+    </div>
+</div>

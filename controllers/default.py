@@ -61,12 +61,20 @@ def certificado():
     _placeholder='Entre com o número do certificado', _name='numero'))
     return dict(form=form)
 
-def certificado_detalhe():
-    certificado_detalhe = db(Certificado.id == request.vars.numero).select()
+def certificado_valido():
+    form = FORM('', INPUT(_id='numero_certificado', _class='form-control form-control-lg',
+    _placeholder='Entre com o número do certificado', _name='numero'))
+    certificado_detalhe = db(Certificado.numero == request.vars.numero).select()
     if certificado_detalhe.records == []:
-        redirect(URL('index'))
+        redirect(URL('certificado_invalido'))
     else:
-        return dict(certificado_detalhe=certificado_detalhe)
+        return dict(certificado_detalhe=certificado_detalhe, form=form)
+
+def certificado_invalido():
+    form = FORM('', INPUT(_id='numero_certificado', _class='form-control form-control-lg',
+    _placeholder='Entre com o número do certificado', _name='numero'))
+    return dict(form=form)
+
 
 def certificado_ver():
     grid = SQLFORM.grid(Certificado)

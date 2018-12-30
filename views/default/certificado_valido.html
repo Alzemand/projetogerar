@@ -1,0 +1,44 @@
+{{extend 'layout-pg.html'}}
+
+{{include 'navc.html'}}
+
+{{for certificado in certificado_detalhe:}}
+    {{certificado}}
+{{pass}}
+
+
+<!-- Masthead -->
+<header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <br><br><br>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <br><br><br><br>
+                <form action="{{=URL('certificado_valido')}}">
+                    <div class="form-row">
+                        <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            {{=form}}
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">Verificar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<br><br><br><br>
+
+    <div id="valido" class="container">
+        <div class="alert alert-success alert-certificado centro">
+            <h4>Certificado Válido!</h4>
+            <br class="clear">
+            Atestamos que o certificado número: <b class="res-codigo">{{=certificado.numero}}</b> 
+            é valido, referente ao curso de <b class="res-codigo">{{=certificado.curso}}</b> feito por <b class="res-codigo">{{=certificado.nome}}</b> 
+            com validade <b class="res-codigo">{{=to_data(certificado.validade)}}</b>.
+        </div>
+    </div>
